@@ -42,7 +42,7 @@ from app import db
             'centrifuge': ('name', ),
             'combined_assembly': ('assembly_name', ),
             'domain': ('domain_name', ),
-            'investigator': ('investigator_first_name', 'investigator_last_name'),
+            'investigator': ('first_name', 'last_name'),
             'ontology': ('label', ),
             'project': ('project_name', ),
             'project_group': ('group_name', ),
