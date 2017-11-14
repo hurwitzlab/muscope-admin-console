@@ -1,3 +1,5 @@
+import os
+
 from imicrobe_model import write_models
 
 
