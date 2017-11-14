@@ -2,6 +2,9 @@ from imicrobe_model import write_models
 
 
 class FlaskModelWriter(write_models.ModelWriter):
+    def __init__(self, db_uri):
+        super().__init__(self, db_uri)
+
     def get_model_parent_class_name(self):
         return 'db.Model'
 
