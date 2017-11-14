@@ -60,7 +60,7 @@ from app import db
 
 
 def main():
-    FlaskModelWriter().write_models('app/models.py')
+    FlaskModelWriter(db_uri=os.environ.get('MUSCOPE_DB_URI')).write_models('app/models.py')
 
 
 if __name__ == '__main__':

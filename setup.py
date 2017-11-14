@@ -75,10 +75,7 @@ setup(
         'flask-basicauth',
         'flask-script',
         'flask-sqlalchemy',
-        'pandas',
-        'pytest',
-        'sqlalchemy',
-        'xlrd'
+        'sqlalchemy'
     ],
 
     # List additional groups of dependencies here (e.g. development
@@ -87,7 +84,7 @@ setup(
     # $ pip install -e .[dev,test]
     extras_require={
         'dev': [],
-        'test': ['pytest'],
+        'test': [],
     },
 
     # If there are data files included in your packages that need to be
@@ -107,8 +104,6 @@ setup(
     # "scripts" keyword. Entry points provide cross-platform support and allow
     # pip to create the appropriate form of executable for the target platform.
     entry_points={
-        'console_scripts': [
-            'import-cruises=util.import_cruises:main'
-        ],
+        'console_scripts': [],
     },
 )
