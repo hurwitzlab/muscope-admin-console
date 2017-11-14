@@ -17,18 +17,18 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-    name='flask-imicrobe',
+    name='muscope-admin-console',
 
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='1.1.4',
+    version='1.0.0',
 
-    description='iMicrobe Flask Server and Utilities',
+    description='muSCOPE Flask-Admin webapp',
     long_description=long_description,
 
     # The project's main homepage.
-    url='https://github.com/hurwitzlab/flask-imicrobe',
+    url='https://github.com/hurwitzlab/muscope-admin-console',
 
     # Author details
     author='Joshua Lynch',
@@ -43,7 +43,7 @@ setup(
         #   3 - Alpha
         #   4 - Beta
         #   5 - Production/Stable
-        'Development Status :: 5 - Alpha',
+        'Development Status :: 5 - Production/Stable',
 
         # Indicate who your project is intended for
         'Intended Audience :: Science/Research',
@@ -55,7 +55,7 @@ setup(
     ],
 
     # What does your project relate to?
-    keywords='metagenomics quality control',
+    keywords='muSCOPE',
 
     # You can just specify the packages manually here if your project is
     # simple. Or you can use find_packages().
