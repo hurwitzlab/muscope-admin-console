@@ -1,9 +1,9 @@
 import os
 
-from imicrobe_model import write_models
+from orminator import ModelWriter
 
 
-class FlaskModelWriter(write_models.ModelWriter):
+class MuscopeModelWriter(ModelWriter):
     def __init__(self, db_uri):
         super().__init__(db_uri)
 
@@ -36,22 +36,30 @@ from app import db
 
         # write __repr__() if we know which fields to display
         table_name_to_representative_py_attr = {
-            'app_data_type': ('name', ),
-            'app_tag': ('value', ),
-            'assembly': ('assembly_name', ),
-            'centrifuge': ('name', ),
-            'combined_assembly': ('assembly_name', ),
-            'domain': ('domain_name', ),
-            'investigator': ('first_name', 'last_name'),
-            'ontology': ('label', ),
-            'project': ('project_name', ),
-            'project_group': ('group_name', ),
-            'protocol': ('protocol_name', ),
+            #'app_data_type': ('name', ),
+            #'app_tag': ('value', ),
+            'app': ('app_name', 'is_active'),
+            'app_run': ('app', 'user'),
+            #'assembly': ('assembly_name', ),
+            'cast': ('cast_number', 'station'),
+            'cruise': ('cruise_name', ),
+            'ctd_type': ('ctd_type', 'unit'),
+            #'centrifuge': ('name', ),
+            #'combined_assembly': ('assembly_name', ),
+            #'domain': ('domain_name', ),
+            'investigator': ('first_name', 'last_name', 'institution'),
+            #'ontology': ('label', ),
+            #'project': ('project_name', ),
+            #'project_group': ('group_name', ),
+            #'protocol': ('protocol_name', ),
             'sample': ('sample_name', ),
-            'sample_attr': ('sample_attr_type', 'attr_value', ),
-            'sample_attr_type': ('type_', ),
+            'sample_attr': ('sample_attr_type', 'value', ),
+            'sample_attr_type': ('type_', 'unit'),
+            'sample_attr_type_alias': ('alias', ),
             'sample_file': ('file', ),
-            'sample_file_type': ('type_', )
+            'sample_file_type': ('type_', ),
+            'station': ('cruise', 'station_number'),
+            'user': ('user_name', )
         }
 
         if table.name in table_name_to_representative_py_attr:
@@ -65,7 +73,7 @@ from app import db
 
 
 def main():
-    FlaskModelWriter(db_uri=os.environ.get('MUSCOPE_DB_URI')).write_models('app/models.py')
+    MuscopeModelWriter(db_uri=os.environ.get('MUSCOPE_DB_URI')).write_models('app/models.py')
 
 
 if __name__ == '__main__':
