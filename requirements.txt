@@ -1,2 +1,2 @@
-git+https://github.com/hurwitzlab/imicrobe-python-orm.git#egg=imicrobe_model
+git+https://github.com/hurwitzlab/orminator.git#egg=orminator
 -e .
