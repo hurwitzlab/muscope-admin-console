@@ -12,28 +12,28 @@ class Config:
 
     SECRET_KEY = os.environ.get('MUSCOPE_ADMIN_CONSOLE_SESSION_SECRET_KEY')
 
-    BASIC_AUTH_USERNAME = os.environ.get('MUSCOPE_ADMIN_CONSOLE_UN')  #'imicrobe-admin'
+    BASIC_AUTH_USERNAME = os.environ.get('MUSCOPE_ADMIN_CONSOLE_UN')
     BASIC_AUTH_PASSWORD = os.environ.get('MUSCOPE_ADMIN_CONSOLE_PW')
     BASIC_AUTH_FORCE = True
 
     def init_app(self, app):
-        pass
+        app.ADMIN_URL = self.ADMIN_URL
+        print(self.BASIC_AUTH_USERNAME)
+        print(self.BASIC_AUTH_PASSWORD)
 
 
 class DevelopmentConfig(Config):
     DEBUG = True
-
-
-class TestingConfig(Config):
-    DEBUG = True
+    # this url can coexist with /imicrobe/admin on a development server
+    ADMIN_URL = '/muscope/admin'
 
 
 class ProductionConfig(Config):
     DEBUG = False
+    ADMIN_URL = '/admin'
 
 
 configs = {
     'development': DevelopmentConfig(),
-    'testing': TestingConfig(),
     'production': ProductionConfig()
 }
