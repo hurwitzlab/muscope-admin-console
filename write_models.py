@@ -13,6 +13,7 @@ class MuscopeModelWriter(ModelWriter):
     def import_model_base(self):
         return """\
 import sqlalchemy as sa
+from sqlalchemy.orm import backref
 import sqlalchemy.dialects.mysql as mysql
 
 from app import db
