@@ -22,19 +22,17 @@ def create_app(config_name):
     configs[config_name].init_app(app_)
 
     basic_auth = BasicAuth(app_)
+
     db.init_app(app_)
 
-    #from .main import main as main_blueprint
-    #app_.register_blueprint(main_blueprint)
+    admin = Admin(
+        app_,
+        name='muSCOPE Administration Console',
+        template_mode='bootstrap3',
+        url=app_.ADMIN_URL)
 
-    #from .imicrobe import imicrobe as imicrobe_api_blueprint
-    #app_.register_blueprint(imicrobe_api_blueprint, url_prefix='/flask')
+    print(app_.ADMIN_URL)
 
-    #from .imicrobe import encoder
-    #app_.json_encoder = encoder.IMicrobeEncoder
-
-    admin_app_name = 'muSCOPE Administration Console'
-    admin = Admin(app_, name=admin_app_name, template_mode='bootstrap3', url='/admin')
     for models_class in models.__dict__.values():
         if isinstance(models_class, type) and models_class.__module__ == models.__name__:
             view = MuScopeModelView(models_class, db.session)
