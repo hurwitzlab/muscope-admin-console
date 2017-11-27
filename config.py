@@ -18,8 +18,6 @@ class Config:
 
     def init_app(self, app):
         app.ADMIN_URL = self.ADMIN_URL
-        print(self.BASIC_AUTH_USERNAME)
-        print(self.BASIC_AUTH_PASSWORD)
 
 
 class DevelopmentConfig(Config):

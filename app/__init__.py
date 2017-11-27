@@ -31,8 +31,6 @@ def create_app(config_name):
         template_mode='bootstrap3',
         url=app_.ADMIN_URL)
 
-    print(app_.ADMIN_URL)
-
     for models_class in models.__dict__.values():
         if isinstance(models_class, type) and models_class.__module__ == models.__name__:
             view = MuScopeModelView(models_class, db.session)
