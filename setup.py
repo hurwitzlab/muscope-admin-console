@@ -75,6 +75,8 @@ setup(
         'flask-basicauth',
         'flask-script',
         'flask-sqlalchemy',
+        'orminator',
+        'pytest',
         'sqlalchemy'
     ],
 
