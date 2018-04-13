@@ -11,7 +11,7 @@ from config import configs
 db = SQLAlchemy()
 
 from app import models
-from app.model_view import MuScopeModelView
+from app.model_view import MuScopeModelView, SampleView, SampleFileView
 
 
 def create_app(config_name):
@@ -31,12 +31,17 @@ def create_app(config_name):
         template_mode='bootstrap3',
         url=app_.ADMIN_URL)
 
-    for models_class in models.__dict__.values():
-        if isinstance(models_class, type) and models_class.__module__ == models.__name__:
-            view = MuScopeModelView(models_class, db.session)
+    for model_class in models.__dict__.values():
+        if isinstance(model_class, type) and model_class.__module__ == models.__name__:
+            print('found model class "{}"'.format(model_class.__name__))
+            if model_class.__name__ == 'Sample':
+                view = SampleView(model_class, db.session)
+            elif model_class.__name__ == 'Sample_file':
+                view = SampleFileView(model_class, db.session)
+            else:
+                view = MuScopeModelView(model_class, db.session)
             admin.add_view(view)
         else:
             pass
-            #print('"{}" is not a database model'.format(models_class))
 
     return app_
