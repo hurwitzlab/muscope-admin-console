@@ -58,7 +58,7 @@ from app import db
             'sample_attr_type': ('type_', 'unit'),
             'sample_attr_type_alias': ('alias', ),
             'sample_attr_type_category': ('category', ),
-            'sample_file': ('file', ),
+            'sample_file': ('file_', ),
             'sample_file_type': ('type_', ),
             'station': ('cruise', 'station_number'),
             'user': ('user_name', )
