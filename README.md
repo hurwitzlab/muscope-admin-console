@@ -31,3 +31,5 @@ Download or clone the repository and install with `pip`:
 ```
 (mu) $ python manage.py runserver --port 5001 --host 0.0.0.0
 ```
+
+I use `screen` to keep the server running.
