@@ -21,7 +21,7 @@ The following environment variables must be defined:
 ## Install
 Download or clone the repository and install with `pip`:
 ```
-(mu) $ git clone <this repository>
+(mu) $ git clone git@github.com:hurwitzlab/muscope-admin-console.git
 (mu) $ cd muscope-admin-console
 (mu) $ pip install -r requirements.txt
 (mu) $ python write_models.py
