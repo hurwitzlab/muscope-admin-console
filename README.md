@@ -12,7 +12,7 @@ $ source ~/venv/mu/bin/activate
 
 The following environment variables must be defined:
 
-  + MUSCOPE_DB_URI=mysql+pymysql://imicrobe:password@127.0.0.1/muscope
+  + MUSCOPE_DB_URI=mysql+pymysql://imicrobe:password@127.0.0.1/muscope2
   + MUSCOPE_FLASK_CONFIG=production
   + MUSCOPE_ADMIN_CONSOLE_UN=muscope-admin
   + MUSCOPE_ADMIN_CONSOLE_PW=
@@ -29,5 +29,5 @@ Download or clone the repository and install with `pip`:
 
 ## Run
 ```
-(mu) $ python manage.py runserver --port <port> --host <host>
+(mu) $ python manage.py runserver --port 5001 --host 0.0.0.0
 ```
