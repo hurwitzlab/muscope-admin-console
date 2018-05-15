@@ -33,3 +33,12 @@ Download or clone the repository and install with `pip`:
 ```
 
 I use `screen` to keep the server running.
+
+
+## Update after database changes
+No need to stop the server. Just run `write_models.py` again and flask will pick up the changes.
+
+```bash
+(mu) $ cd muscope-admin-console
+(mu) $ python write_models.py
+```
