@@ -36,9 +36,10 @@ I use `screen` to keep the server running.
 
 
 ## Update after database changes
-No need to stop the server. Just run `write_models.py` again and flask will pick up the changes.
+Stop the flask server with Ctrl-C. Run `write_models.py` and start the server again.
 
 ```bash
-(mu) $ cd muscope-admin-console
+(mu) $ <Ctrl-C>
 (mu) $ python write_models.py
+(mu) $ python manage.py runserver --port 5001 --host 0.0.0.0
 ```
