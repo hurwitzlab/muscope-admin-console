@@ -38,7 +38,7 @@ I use `screen` to keep the server running.
 ## View
 In development configuration the URL is 
 ```
-https://localhost:8443/imicrobe/admin/
+https://localhost:8443/muscope/admin/
 ```
 
 In production configuration the URL is
