@@ -12,11 +12,11 @@ $ source ~/venv/mu/bin/activate
 
 The following environment variables must be defined:
 
-  + MUSCOPE_DB_URI=mysql+pymysql://imicrobe:password@127.0.0.1/muscope2
+  + MUSCOPE_DB_URI=mysql+pymysql://imicrobe:{password}@127.0.0.1/muscope2
   + MUSCOPE_FLASK_CONFIG=production
   + MUSCOPE_ADMIN_CONSOLE_UN=muscope-admin
-  + MUSCOPE_ADMIN_CONSOLE_PW=
-  + MUSCOPE_ADMIN_CONSOLE_SESSION_SECRET_KEY=
+  + MUSCOPE_ADMIN_CONSOLE_PW={random strings are best}
+  + MUSCOPE_ADMIN_CONSOLE_SESSION_SECRET_KEY={a UUID is a good choice}
 
 ## Install
 Download or clone the repository and install with `pip`:
@@ -34,6 +34,17 @@ Download or clone the repository and install with `pip`:
 
 I use `screen` to keep the server running.
 
+
+## View
+In development configuration the URL is 
+```
+https://localhost:8443/imicrobe/admin/
+```
+
+In production configuration the URL is
+```
+https://data.muscope.org/admin/
+```
 
 ## Update after database changes
 Stop the flask server with Ctrl-C. Run `write_models.py` and start the server again.
